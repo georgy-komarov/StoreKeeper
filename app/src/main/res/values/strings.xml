@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">ItemScan</string>
+    <string name="settings">Настройки</string>
+    <string name="exit">Выход</string>
+    <string name="result">Результат сканирования</string>
+    <string name="confirm">Подтвердить</string>
+    <string name="scan">Сканировать</string>
+    <string name="itemDataHint">Штрихкод / артикул / наименование</string>
+    <string name="barcode">Штрихкод</string>
+    <string name="searchResult">Результат поиска</string>
+    <string name="or">или</string>
+</resources>

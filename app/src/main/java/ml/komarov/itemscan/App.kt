@@ -2,7 +2,6 @@ package ml.komarov.itemscan
 
 import android.app.Application
 import androidx.room.Room
-import com.google.android.material.color.DynamicColors
 import ml.komarov.itemscan.db.AppDatabase
 
 
@@ -16,7 +15,6 @@ class App : Application() {
             .fallbackToDestructiveMigration()
             .allowMainThreadQueries()
             .build()
-//        DynamicColors.applyToActivitiesIfAvailable(this)
     }
 
     fun getDatabase(): AppDatabase? {

@@ -12,9 +12,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MainTheme">
-        <activity android:name="ml.komarov.itemscan.BarcodeActivity" />
-        <activity android:name="ml.komarov.itemscan.MainActivity"
-            android:exported="true">
+        <activity
+            android:name="ml.komarov.itemscan.BarcodeActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="ml.komarov.itemscan.MainActivity"
+            android:exported="true"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />

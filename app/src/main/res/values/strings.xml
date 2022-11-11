@@ -9,4 +9,7 @@
     <string name="barcode">Штрихкод</string>
     <string name="searchResult">Результат поиска</string>
     <string name="or">или</string>
+    <string name="menu_print">Печать ценников</string>
+    <string name="menu_stock">Проверка остатков</string>
+    <string name="menu_prices">Изменение цены</string>
 </resources>

@@ -1,58 +1,41 @@
 package ml.komarov.itemscan.fragments
 
 import android.os.Bundle
-import android.view.*
-import android.widget.Toast
-import androidx.appcompat.app.AlertDialog
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import android.widget.TextView
 import androidx.fragment.app.Fragment
-import kotlinx.android.synthetic.main.fragment_result.view.*
-import ml.komarov.itemscan.App
-import ml.komarov.itemscan.R
-import ml.komarov.itemscan.db.AppDatabase
-import okhttp3.*
-import okhttp3.MediaType.Companion.toMediaTypeOrNull
-import okhttp3.RequestBody.Companion.toRequestBody
-import org.json.JSONObject
-import java.io.IOException
-import java.text.SimpleDateFormat
-import java.util.*
+import androidx.viewbinding.ViewBinding
+import ml.komarov.itemscan.databinding.FragmentResultBinding
 
+interface FragmentResultBindingAbstract {
+    val textFragment: TextView
+    val textCode: TextView
+}
 
-class ResultFragment : Fragment() {
-    companion object {
-        private val client = OkHttpClient()
+abstract class ResultFragment : Fragment() {
 
-        fun newInstance(): ResultFragment {
-            val args = Bundle()
+    protected var _binding: ViewBinding? = null
 
-            val fragment = ResultFragment()
-            fragment.arguments = args
-            return fragment
-        }
-    }
+    // This property is only valid between onCreateView and
+    // onDestroyView.
+    protected val binding get() = _binding!!
 
-    private var root: View? = null
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setHasOptionsMenu(true)
+    protected fun fillArgs() {
+        val code = arguments?.getString("productId")
+        val resultBinding = binding as FragmentResultBindingAbstract
+        resultBinding.textFragment.text = this::class.qualifiedName
+        resultBinding.textCode.text = code
     }
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        super.onCreate(savedInstanceState)
-        root = inflater.inflate(R.layout.fragment_result, container, false)
-
-        requireActivity().title = getString(R.string.result)
-
-        val args = requireArguments()
-        val code = args.getString("code")
-
-        root?.tvCode?.text = code
-
-        return root
+    ): View {
+        _binding = FragmentResultBinding.inflate(inflater, container, false)
+        fillArgs()
+        return binding.root
     }
 }

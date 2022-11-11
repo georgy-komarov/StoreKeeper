@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_print">
+
+    <fragment
+        android:id="@+id/nav_print"
+        android:name="ml.komarov.itemscan.fragments.PrintFragment"
+        android:label="@string/menu_print"
+        tools:layout="@layout/fragment_main">
+        <action
+            android:id="@+id/action_nav_print_to_nav_print_action"
+            app:destination="@id/nav_print_action" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_stock"
+        android:name="ml.komarov.itemscan.fragments.StockFragment"
+        android:label="@string/menu_stock"
+        tools:layout="@layout/fragment_main">
+        <action
+            android:id="@+id/action_nav_stock_to_nav_stock_action"
+            app:destination="@id/nav_stock_action" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_prices"
+        android:name="ml.komarov.itemscan.fragments.PricesFragment"
+        android:label="@string/menu_prices"
+        tools:layout="@layout/fragment_main">
+        <action
+            android:id="@+id/action_nav_prices_to_nav_prices_action"
+            app:destination="@id/nav_prices_action" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_print_action"
+        android:name="ml.komarov.itemscan.fragments.PrintActionFragment"
+        android:label="@string/menu_print"
+        tools:layout="@layout/fragment_print_action">
+        <argument
+            android:name="productId"
+            app:argType="string" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_stock_action"
+        android:name="ml.komarov.itemscan.fragments.StockActionFragment"
+        android:label="@string/menu_stock"
+        tools:layout="@layout/fragment_stock_action">
+        <argument
+            android:name="productId"
+            app:argType="string" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_prices_action"
+        android:name="ml.komarov.itemscan.fragments.PricesActionFragment"
+        android:label="@string/menu_prices"
+        tools:layout="@layout/fragment_prices_action">
+        <argument
+            android:name="productId"
+            app:argType="string" />
+    </fragment>
+</navigation>

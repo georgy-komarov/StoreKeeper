@@ -1,11 +1,11 @@
-package ml.komarov.itemscan.fragments
+package ml.komarov.itemscan.fragments.actions
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.viewbinding.ViewBinding
 import ml.komarov.itemscan.databinding.FragmentPricesActionBinding
 
-class PricesActionFragment : ResultFragment() {
+class PricesActionFragment : BaseResultFragment() {
     private lateinit var binding: FragmentPricesActionBinding
 
     override fun onCreateViewBinding(

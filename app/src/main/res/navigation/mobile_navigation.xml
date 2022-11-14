@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/nav_print"
-        android:name="ml.komarov.itemscan.fragments.PrintFragment"
+        android:name="ml.komarov.itemscan.fragments.selectors.PrintSelectorFragment"
         android:label="@string/menu_print"
         tools:layout="@layout/fragment_main">
         <action
@@ -17,7 +17,7 @@
 
     <fragment
         android:id="@+id/nav_stock"
-        android:name="ml.komarov.itemscan.fragments.StockFragment"
+        android:name="ml.komarov.itemscan.fragments.selectors.StockSelectorFragment"
         android:label="@string/menu_stock"
         tools:layout="@layout/fragment_main">
         <action
@@ -27,7 +27,7 @@
 
     <fragment
         android:id="@+id/nav_prices"
-        android:name="ml.komarov.itemscan.fragments.PricesFragment"
+        android:name="ml.komarov.itemscan.fragments.selectors.PricesSelectorFragment"
         android:label="@string/menu_prices"
         tools:layout="@layout/fragment_main">
         <action
@@ -37,7 +37,7 @@
 
     <fragment
         android:id="@+id/nav_print_action"
-        android:name="ml.komarov.itemscan.fragments.PrintActionFragment"
+        android:name="ml.komarov.itemscan.fragments.actions.PrintActionFragment"
         android:label="@string/menu_print"
         tools:layout="@layout/fragment_print_action">
         <argument
@@ -47,7 +47,7 @@
 
     <fragment
         android:id="@+id/nav_stock_action"
-        android:name="ml.komarov.itemscan.fragments.StockActionFragment"
+        android:name="ml.komarov.itemscan.fragments.actions.StockActionFragment"
         android:label="@string/menu_stock"
         tools:layout="@layout/fragment_stock_action">
         <argument
@@ -57,7 +57,7 @@
 
     <fragment
         android:id="@+id/nav_prices_action"
-        android:name="ml.komarov.itemscan.fragments.PricesActionFragment"
+        android:name="ml.komarov.itemscan.fragments.actions.PricesActionFragment"
         android:label="@string/menu_prices"
         tools:layout="@layout/fragment_prices_action">
         <argument

@@ -1,4 +1,4 @@
-package ml.komarov.itemscan.fragments
+package ml.komarov.itemscan.fragments.actions
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -9,7 +9,7 @@ import androidx.viewbinding.ViewBinding
 import ml.komarov.itemscan.databinding.FragmentResultBinding
 
 
-abstract class ResultFragment : Fragment() {
+abstract class BaseResultFragment : Fragment() {
 
     private lateinit var _resultBinding: FragmentResultBinding
 

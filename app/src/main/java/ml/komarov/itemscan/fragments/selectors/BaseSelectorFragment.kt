@@ -1,4 +1,4 @@
-package ml.komarov.itemscan.fragments
+package ml.komarov.itemscan.fragments.selectors
 
 import android.app.Activity.RESULT_OK
 import android.content.Intent
@@ -12,7 +12,7 @@ import ml.komarov.itemscan.BarcodeActivity
 import ml.komarov.itemscan.databinding.FragmentMainBinding
 
 
-abstract class MainFragment : Fragment() {
+abstract class BaseSelectorFragment : Fragment() {
 
     lateinit var productId: String
 
@@ -38,6 +38,12 @@ abstract class MainFragment : Fragment() {
     ): View {
         _binding = FragmentMainBinding.inflate(inflater, container, false)
 
+        setup()
+
+        return binding.root
+    }
+
+    private fun setup () {
         binding.btnScan.setOnClickListener {
             val intent = Intent(activity, BarcodeActivity::class.java)
             resultLauncher.launch(intent)
@@ -45,8 +51,6 @@ abstract class MainFragment : Fragment() {
         binding.btnConfirm.setOnClickListener {
             openCodeData(binding.editTextMark.text.toString())
         }
-
-        return binding.root
     }
 
     private fun openCodeData(code: String) {

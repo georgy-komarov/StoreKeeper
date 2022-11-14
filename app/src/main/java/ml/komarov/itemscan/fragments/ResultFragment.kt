@@ -4,36 +4,47 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.viewbinding.ViewBinding
-import ml.komarov.itemscan.R
 import ml.komarov.itemscan.databinding.FragmentResultBinding
-
-
 
 
 abstract class ResultFragment : Fragment() {
 
-    private var _binding: ViewBinding? = null
-
-    // This property is only valid between onCreateView and
-    // onDestroyView.
-    private val binding get() = _binding!!
-
-    private fun fillArgs() {
-        val code = arguments?.getString("productId")
-        binding.root.findViewById<TextView>(R.id.text_code).text = this::class.qualifiedName
-        binding.root.findViewById<TextView>(R.id.text_fragment).text = code
-    }
+    private lateinit var _resultBinding: FragmentResultBinding
 
     override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
+        inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
     ): View {
-        _binding = FragmentResultBinding.inflate(inflater, container, false)
-        fillArgs()
+        // Make sure to create the concrete binding while it's required to
+        // create the resultBinding from it
+        val binding = onCreateViewBinding(inflater, container)
+
+        // We're using the concrete layout of the child class to create our
+        // commonly used binding
+        _resultBinding = FragmentResultBinding.bind(binding.root)
+
+        setup()
+
         return binding.root
+    }
+
+    // Makes sure to create the concrete binding class from child-classes before
+    // the commonBinding can be bound
+    protected abstract fun onCreateViewBinding(
+        inflater: LayoutInflater,
+        container: ViewGroup?
+    ): ViewBinding
+
+    // Allows child-classes to access the resultBinding to access common
+    // used views
+    private val resultBinding get() = _resultBinding
+
+    protected open fun setup() {
+        val code = arguments?.getString("productId")
+        resultBinding.textCode.text = code
+        resultBinding.textProduct.text = "товар"
+        resultBinding.textSku.text = "артикул"
+        resultBinding.textSize.text = "размер"
     }
 }

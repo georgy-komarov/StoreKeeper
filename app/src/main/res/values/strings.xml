@@ -2,7 +2,9 @@
     <string name="app_name">ItemScan</string>
     <string name="settings">Настройки</string>
     <string name="exit">Выход</string>
-    <string name="result">Результат сканирования</string>
+    <string name="scanResultProduct">Наименование товара</string>
+    <string name="scanResultSku">Артикул товара</string>
+    <string name="scanResultSize">Размер товара</string>
     <string name="confirm">Подтвердить</string>
     <string name="scan">Сканировать</string>
     <string name="itemDataHint">Штрихкод / артикул / наименование</string>
@@ -12,4 +14,5 @@
     <string name="menu_print">Печать ценников</string>
     <string name="menu_stock">Проверка остатков</string>
     <string name="menu_prices">Изменение цены</string>
+    <string name="colon">\:\u0020</string>
 </resources>

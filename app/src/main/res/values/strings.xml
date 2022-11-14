@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">ItemScan</string>
     <string name="settings">Настройки</string>
+    <string name="close">Вернуться</string>
     <string name="exit">Выход</string>
     <string name="scanResultProduct">Наименование товара</string>
     <string name="scanResultSku">Артикул товара</string>

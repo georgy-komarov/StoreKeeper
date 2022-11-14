@@ -3,6 +3,7 @@ package ml.komarov.itemscan.fragments.actions
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.viewbinding.ViewBinding
+import ml.komarov.itemscan.R
 import ml.komarov.itemscan.databinding.FragmentStockActionBinding
 
 class StockActionFragment : BaseResultFragment() {
@@ -20,4 +21,6 @@ class StockActionFragment : BaseResultFragment() {
         super.setup()
         binding.textStock.text = "stock_table"
     }
+
+    override val menuCloseDestination = R.id.nav_stock
 }

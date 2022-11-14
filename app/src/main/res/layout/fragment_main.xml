@@ -8,24 +8,29 @@
     android:paddingTop="8dp"
     android:paddingEnd="16dp"
     android:paddingBottom="8dp"
-    tools:context="ml.komarov.itemscan.MainActivity">
+    tools:context=".fragments.selectors.BaseSelectorFragment">
 
-    <EditText
-        android:id="@+id/editTextMark"
+    <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="@string/itemDataHint"
-        android:importantForAutofill="no"
-        android:inputType="text"
-        android:minHeight="48dp"
-        android:textColorHint="#546E7A" />
+        android:hint="@string/item_data_hint">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edit_text_product"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:importantForAutofill="no"
+            android:inputType="text" />
+    </com.google.android.material.textfield.TextInputLayout>
 
     <Button
+        android:id="@+id/button_confirm"
         style="?attr/materialButtonOutlinedStyle"
-        android:id="@+id/btnConfirm"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="32dp"
         android:text="@string/confirm" />
 
 
@@ -36,10 +41,12 @@
         android:textAlignment="center" />
 
     <Button
-        style="?attr/materialButtonOutlinedStyle"
         android:id="@+id/btnScan"
+        style="?attr/materialButtonOutlinedStyle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
         android:text="@string/scan" />
 
 </LinearLayout>

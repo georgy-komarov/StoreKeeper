@@ -1,19 +1,28 @@
 <resources>
     <string name="app_name">ItemScan</string>
+    <string name="colon">\:\u0020</string>
     <string name="settings">Настройки</string>
     <string name="close">Вернуться</string>
     <string name="exit">Выход</string>
-    <string name="scanResultProduct">Наименование товара</string>
-    <string name="scanResultSku">Артикул товара</string>
-    <string name="scanResultSize">Размер товара</string>
+    <string name="product_name">Наименование товара</string>
+    <string name="product_sku">Артикул товара</string>
+    <string name="product_size">Размер товара</string>
     <string name="confirm">Подтвердить</string>
     <string name="scan">Сканировать</string>
-    <string name="itemDataHint">Штрихкод / артикул / наименование</string>
+    <string name="item_data_hint">Штрихкод / артикул / наименование</string>
     <string name="barcode">Штрихкод</string>
-    <string name="searchResult">Результат поиска</string>
     <string name="or">или</string>
     <string name="menu_print">Печать ценников</string>
     <string name="menu_stock">Проверка остатков</string>
     <string name="menu_prices">Изменение цены</string>
-    <string name="colon">\:\u0020</string>
+    <string name="printer">Принтер</string>
+    <string name="products_data">Данные о товарах</string>
+    <string name="update_products">Обновить данные о товарах</string>
+    <string name="save_settings">Сохранить настройки</string>
+    <string name="update">Обновить</string>
+    <string name="http_service_address">Адрес HTTP сервиса</string>
+    <string name="shop">Магазин</string>
+    <string name="sizes_count">Загружено характеристик</string>
+    <string name="products_count">Загружено товаров</string>
+    <string name="barcodes_count">Загружено штрихкодов</string>
 </resources>

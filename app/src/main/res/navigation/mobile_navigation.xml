@@ -64,4 +64,26 @@
             android:name="productId"
             app:argType="string" />
     </fragment>
+    <fragment
+        android:id="@+id/nav_settings"
+        android:name="ml.komarov.itemscan.fragments.settings.SettingsFragment"
+        android:label="@string/settings"
+        tools:layout="@layout/fragment_settings">
+        <action
+            android:id="@+id/action_nav_settings_to_nav_settings_products"
+            app:destination="@id/nav_settings_products" />
+        <action
+            android:id="@+id/action_nav_settings_to_nav_settings_printer"
+            app:destination="@id/nav_settings_printer" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_settings_products"
+        android:name="ml.komarov.itemscan.fragments.settings.SettingsProductsFragment"
+        android:label="@string/products_data"
+        tools:layout="@layout/fragment_settings_products"/>
+    <fragment
+        android:id="@+id/nav_settings_printer"
+        android:name="ml.komarov.itemscan.fragments.settings.SettingsPrinterFragment"
+        android:label="@string/printer"
+        tools:layout="@layout/fragment_settings_printer"/>
 </navigation>

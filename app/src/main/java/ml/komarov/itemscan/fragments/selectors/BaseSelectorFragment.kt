@@ -48,8 +48,8 @@ abstract class BaseSelectorFragment : Fragment() {
             val intent = Intent(activity, BarcodeActivity::class.java)
             resultLauncher.launch(intent)
         }
-        binding.btnConfirm.setOnClickListener {
-            openCodeData(binding.editTextMark.text.toString())
+        binding.buttonConfirm.setOnClickListener {
+            openCodeData(binding.editTextProduct.text.toString())
         }
     }
 

@@ -7,26 +7,24 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.viewbinding.ViewBinding
+import ml.komarov.itemscan.R
 import ml.komarov.itemscan.databinding.FragmentResultBinding
 
-interface FragmentResultBindingAbstract {
-    val textFragment: TextView
-    val textCode: TextView
-}
+
+
 
 abstract class ResultFragment : Fragment() {
 
-    protected var _binding: ViewBinding? = null
+    private var _binding: ViewBinding? = null
 
     // This property is only valid between onCreateView and
     // onDestroyView.
-    protected val binding get() = _binding!!
+    private val binding get() = _binding!!
 
-    protected fun fillArgs() {
+    private fun fillArgs() {
         val code = arguments?.getString("productId")
-        val resultBinding = binding as FragmentResultBindingAbstract
-        resultBinding.textFragment.text = this::class.qualifiedName
-        resultBinding.textCode.text = code
+        binding.root.findViewById<TextView>(R.id.text_code).text = this::class.qualifiedName
+        binding.root.findViewById<TextView>(R.id.text_fragment).text = code
     }
 
     override fun onCreateView(

@@ -1,7 +1,6 @@
 package ml.komarov.itemscan
 
 import android.os.Bundle
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.navigation.NavController
@@ -27,10 +26,6 @@ class MainActivity : AppCompatActivity() {
 
         setSupportActionBar(binding.appBarMain.toolbar)
 
-        binding.appBarMain.fab.setOnClickListener {
-            Toast.makeText(applicationContext, "Replace with your own action", Toast.LENGTH_LONG)
-                .show()
-        }
         navController = findNavController(R.id.nav_host_fragment_content_main)
         val drawerLayout: DrawerLayout = binding.drawerLayout
         val navView: NavigationView = binding.navView

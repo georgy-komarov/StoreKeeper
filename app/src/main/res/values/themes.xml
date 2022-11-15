@@ -29,4 +29,8 @@
         <item name="itemTextColor">@color/navigation_item_color</item>
         <item name="itemShapeFillColor">?attr/colorPrimary</item>
     </style>
+
+    <style name="Widget.Material3.Button.IconButton" parent="Widget.Material3.Button.TextButton">
+        <item name="shapeAppearance">@style/ShapeAppearance.Material3.Corner.ExtraSmall</item>
+    </style>
 </resources>

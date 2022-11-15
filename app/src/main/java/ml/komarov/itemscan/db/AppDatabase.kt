@@ -10,7 +10,7 @@ import androidx.room.RoomDatabase
     exportSchema = false,
 )
 abstract class AppDatabase : RoomDatabase() {
-    abstract fun productDao(): ProductDao?
-    abstract fun characteristicDao(): CharacteristicDao?
-    abstract fun barcodeDao(): BarcodeDao?
+    abstract fun productDao(): ProductDao
+    abstract fun characteristicDao(): CharacteristicDao
+    abstract fun barcodeDao(): BarcodeDao
 }

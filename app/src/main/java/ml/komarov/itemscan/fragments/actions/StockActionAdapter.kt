@@ -5,27 +5,27 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import ml.komarov.itemscan.R
-import ml.komarov.itemscan.databinding.StockUnitBinding
+import ml.komarov.itemscan.databinding.StockActionUnitBinding
 
 class StockActionAdapter : RecyclerView.Adapter<StockActionAdapter.StockActionViewHolder>() {
 
     private var UnitList = emptyList<StockActionUnit>()
 
     class StockActionViewHolder(
-        val binding: StockUnitBinding
+        val binding: StockActionUnitBinding
         ): RecyclerView.ViewHolder(binding.root) {
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): StockActionViewHolder {
         val inflater = LayoutInflater.from(parent.context)
-        val binding = StockUnitBinding.inflate(inflater, parent, false)
+        val binding = StockActionUnitBinding.inflate(inflater, parent, false)
         return StockActionViewHolder(binding)
     }
 
     override fun onBindViewHolder(holder: StockActionViewHolder, position: Int) {
-        holder.binding.price.text = UnitList[position].price.toString()
-        holder.binding.amount.text = UnitList[position].amount.toString()
-        holder.binding.size.text = UnitList[position].size
+        holder.binding.stockPrice.text = UnitList[position].price.toString()
+        holder.binding.stockAmount.text = UnitList[position].amount.toString()
+        holder.binding.stockSize.text = UnitList[position].size
     }
 
     override fun getItemCount(): Int {

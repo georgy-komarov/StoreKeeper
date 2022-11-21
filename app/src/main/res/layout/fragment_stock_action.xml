@@ -9,7 +9,7 @@
     <include layout="@layout/fragment_result" />
 
     <View
-        android:id="@+id/separator"
+        android:id="@+id/stock_separator"
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:layout_alignParentLeft="true"
@@ -19,63 +19,63 @@
         android:layout_marginTop="120dp" />
 
     <TextView
-        android:id="@+id/size_column"
+        android:id="@+id/stock_size_column"
         android:layout_width="0dp"
         android:layout_height="19dp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
         android:gravity="center_horizontal|top"
         android:text="@string/size"
-        app:layout_constraintTop_toBottomOf="@id/separator"
+        app:layout_constraintTop_toBottomOf="@id/stock_separator"
         android:layout_marginTop="7dp"
         android:layout_marginLeft="30dp"
-        app:layout_constraintRight_toLeftOf="@id/price_column"
+        app:layout_constraintRight_toLeftOf="@id/stock_price_column"
         app:layout_constraintLeft_toLeftOf="parent"
         android:layout_marginBottom="7dp"/>
 
     <TextView
-        android:id="@+id/price_column"
+        android:id="@+id/stock_price_column"
         android:layout_width="0dp"
         android:layout_height="19dp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
         android:gravity="center_horizontal|top"
         android:text="@string/price"
-        app:layout_constraintTop_toBottomOf="@id/separator"
+        app:layout_constraintTop_toBottomOf="@id/stock_separator"
         android:layout_marginTop="7dp"
-        app:layout_constraintRight_toLeftOf="@id/amount_column"
-        app:layout_constraintLeft_toRightOf="@id/size_column"/>
+        app:layout_constraintRight_toLeftOf="@id/stock_amount_column"
+        app:layout_constraintLeft_toRightOf="@id/stock_size_column"/>
 
     <TextView
-        android:id="@+id/amount_column"
+        android:id="@+id/stock_amount_column"
         android:layout_width="0dp"
         android:layout_height="19dp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
         android:gravity="center_horizontal|top"
         android:text="@string/amount"
-        app:layout_constraintTop_toBottomOf="@id/separator"
+        app:layout_constraintTop_toBottomOf="@id/stock_separator"
         android:layout_marginTop="7dp"
         android:layout_marginRight="30dp"
-        app:layout_constraintLeft_toRightOf="@id/price_column"
+        app:layout_constraintLeft_toRightOf="@id/stock_price_column"
         app:layout_constraintRight_toRightOf="parent"/>
 
     <View
-        android:id="@+id/separator2"
+        android:id="@+id/stock_separator2"
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
         android:background="@drawable/table_separator"
-        app:layout_constraintTop_toBottomOf="@id/size_column"
+        app:layout_constraintTop_toBottomOf="@id/stock_size_column"
         android:layout_marginTop="7dp" />
     
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/stock_recycler"
         android:layout_width="match_parent"
         android:layout_height="150dp"
-        app:layout_constraintTop_toBottomOf="@id/separator2"
-        tools:listitem="@layout/stock_unit"
+        app:layout_constraintTop_toBottomOf="@id/stock_separator2"
+        tools:listitem="@layout/stock_action_unit"
 
         />
 

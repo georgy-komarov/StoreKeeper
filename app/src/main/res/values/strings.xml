@@ -28,4 +28,5 @@
     <string name="size">Размер</string>
     <string name="price">Цена</string>
     <string name="amount">Количество</string>
+    <string name="new_price">Новая</string>
 </resources>

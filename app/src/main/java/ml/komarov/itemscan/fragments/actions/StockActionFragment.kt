@@ -14,7 +14,6 @@ class StockActionFragment : BaseResultFragment() {
     private lateinit var recyclerView: RecyclerView
     private lateinit var adapter: StockActionAdapter
 
-
     override fun onCreateViewBinding(
         inflater: LayoutInflater,
         container: ViewGroup?
@@ -24,7 +23,6 @@ class StockActionFragment : BaseResultFragment() {
     }
 
     override fun setup() {
-
         recyclerView = binding.stockRecycler
         val manager = LinearLayoutManager(context)
         recyclerView.layoutManager = manager

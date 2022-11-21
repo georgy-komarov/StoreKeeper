@@ -8,17 +8,104 @@
 
     <include layout="@layout/fragment_result" />
 
-    <TextView
-        android:id="@+id/text_prices"
+    <View
+        android:id="@+id/prices_separator"
         android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:background="@drawable/table_separator"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="120dp" />
+
+    <CheckBox android:id="@+id/prices_checkbox_column"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:textAlignment="center"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/prices_separator"
+        app:layout_constraintLeft_toRightOf="@id/prices_size_column"
+        app:layout_constraintBottom_toTopOf="@id/prices_separator2"
+        android:visibility="invisible"
+        />
+
+    <TextView
+        android:id="@+id/prices_size_column"
+        android:layout_width="0dp"
+        android:layout_height="19dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:gravity="center_horizontal|top"
+        android:text="@string/size"
+        app:layout_constraintTop_toBottomOf="@id/prices_separator"
+        android:layout_marginTop="7dp"
+        android:layout_marginBottom="7dp"
+        app:layout_constraintLeft_toRightOf="@id/prices_checkbox_column"
+        app:layout_constraintRight_toLeftOf="@id/prices_amount_column"
+        />
+
+    <TextView
+        android:id="@+id/prices_amount_column"
+        android:layout_width="0dp"
+        android:layout_height="19dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:gravity="center_horizontal|top"
+        android:text="@string/amount"
+        app:layout_constraintTop_toBottomOf="@id/prices_separator"
+        android:layout_marginTop="7dp"
+        android:layout_marginBottom="7dp"
+        app:layout_constraintRight_toLeftOf="@id/prices_price_column"
+        app:layout_constraintLeft_toRightOf="@id/prices_size_column"/>
+
+    <TextView
+        android:id="@+id/prices_price_column"
+        android:layout_width="0dp"
+        android:layout_height="19dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:gravity="center_horizontal|top"
+        android:text="@string/price"
+        app:layout_constraintTop_toBottomOf="@id/prices_separator"
+        android:layout_marginTop="7dp"
+        android:layout_marginBottom="7dp"
+        app:layout_constraintRight_toLeftOf="@id/prices_newprice_column"
+        app:layout_constraintLeft_toRightOf="@id/prices_amount_column"/>
+
+
+    <TextView
+        android:id="@+id/prices_newprice_column"
+        android:layout_width="0dp"
+        android:layout_height="19dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:gravity="center_horizontal|top"
+        android:text="@string/new_price"
+        app:layout_constraintTop_toBottomOf="@id/prices_separator"
+        android:layout_marginTop="7dp"
+        android:layout_marginBottom="7dp"
+        android:layout_marginRight="24dp"
+        app:layout_constraintLeft_toRightOf="@id/prices_price_column"
+        app:layout_constraintRight_toRightOf="parent"/>
+
+    <View
+        android:id="@+id/prices_separator2"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        app:layout_constraintTop_toBottomOf="@id/prices_size_column"
+        android:background="@drawable/table_separator"
+        android:layout_marginTop="7dp" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/prices_recycler"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        app:layout_constraintTop_toBottomOf="@id/prices_separator2"
+        tools:listitem="@layout/prices_action_unit"
+
+        />
+
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

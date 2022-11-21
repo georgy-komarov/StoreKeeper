@@ -7,7 +7,7 @@
 
 
     <TextView
-        android:id="@+id/size"
+        android:id="@+id/stock_size"
         android:layout_width="0dp"
         android:layout_height="19dp"
         android:layout_alignParentLeft="true"
@@ -19,11 +19,11 @@
         android:layout_marginBottom="7dp"
         android:layout_marginLeft="30dp"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toLeftOf="@id/price"
+        app:layout_constraintRight_toLeftOf="@id/stock_price"
         />
 
     <TextView
-        android:id="@+id/price"
+        android:id="@+id/stock_price"
         android:layout_width="0dp"
         android:layout_height="19dp"
         android:layout_alignParentLeft="true"
@@ -33,11 +33,11 @@
         app:layout_constraintTop_toTopOf="parent"
         android:layout_marginTop="7dp"
         android:layout_marginBottom="7dp"
-        app:layout_constraintRight_toLeftOf="@id/amount"
-        app:layout_constraintLeft_toRightOf="@id/size"/>
+        app:layout_constraintRight_toLeftOf="@id/stock_amount"
+        app:layout_constraintLeft_toRightOf="@id/stock_size"/>
 
     <TextView
-        android:id="@+id/amount"
+        android:id="@+id/stock_amount"
         android:layout_width="0dp"
         android:layout_height="19dp"
         android:layout_alignParentLeft="true"
@@ -48,7 +48,7 @@
         android:layout_marginTop="7dp"
         android:layout_marginBottom="7dp"
         android:layout_marginRight="30dp"
-        app:layout_constraintLeft_toRightOf="@id/price"
+        app:layout_constraintLeft_toRightOf="@id/stock_price"
         app:layout_constraintRight_toRightOf="parent"/>
 
 

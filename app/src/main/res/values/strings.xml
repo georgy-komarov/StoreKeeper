@@ -25,4 +25,7 @@
     <string name="sizes_count">Загружено характеристик</string>
     <string name="products_count">Загружено товаров</string>
     <string name="barcodes_count">Загружено штрихкодов</string>
+    <string name="size">Размер</string>
+    <string name="price">Цена</string>
+    <string name="amount">Количество</string>
 </resources>

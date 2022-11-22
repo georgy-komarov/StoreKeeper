@@ -112,6 +112,7 @@ class SettingsPrinterFragment : Fragment() {
 
                         requireActivity().runOnUiThread {
                             binding.editTextPrinter.setAdapter(adapter)
+                            binding.editTextPrinter.isEnabled = true
                             binding.editTextPrinter.showDropDown()
                         }
                     }

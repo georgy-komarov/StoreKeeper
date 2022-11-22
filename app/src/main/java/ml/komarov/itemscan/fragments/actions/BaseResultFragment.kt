@@ -8,13 +8,18 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Lifecycle
 import androidx.navigation.Navigation.findNavController
 import androidx.viewbinding.ViewBinding
+import ml.komarov.itemscan.App
 import ml.komarov.itemscan.R
 import ml.komarov.itemscan.databinding.FragmentResultBinding
+import ml.komarov.itemscan.db.AppDatabase
+import ml.komarov.itemscan.db.BarcodeWithInfo
+import ml.komarov.itemscan.db.Product
 
 
 abstract class BaseResultFragment : Fragment(), MenuProvider {
 
     private lateinit var _resultBinding: FragmentResultBinding
+    private lateinit var product: Product
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
@@ -68,10 +73,22 @@ abstract class BaseResultFragment : Fragment(), MenuProvider {
     }
 
     protected open fun setup() {
-        val code = arguments?.getString("productId")
-        resultBinding.textCode.text = code
-        resultBinding.textProduct.text = "товар"
-        resultBinding.textSku.text = "артикул"
-        resultBinding.textSize.text = "размер"
+        val db: AppDatabase = App.instance!!.database
+
+        // Parse arguments
+        val productKey = requireArguments().getString("productKey", "")
+        val barcodeData = requireArguments().getString("barcode")
+
+        product = db.productDao().findByKey(productKey)
+
+        var barcode: BarcodeWithInfo? = null
+        if (barcodeData !== null) {
+            barcode = db.barcodeDao().findByBarcodeWithInfo(barcodeData)[0]
+        }
+
+        resultBinding.textCode.text = barcodeData?.ifBlank { "-" }
+        resultBinding.textProduct.text = product.name
+        resultBinding.textSku.text = product.sku
+        resultBinding.textSize.text = barcode?.characteristic?.name?.ifBlank { "-" }
     }
 }

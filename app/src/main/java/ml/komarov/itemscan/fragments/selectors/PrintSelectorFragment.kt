@@ -4,7 +4,7 @@ import androidx.navigation.findNavController
 
 class PrintSelectorFragment : BaseSelectorFragment() {
     override fun navigateToAction() {
-        val action = PrintSelectorFragmentDirections.actionNavPrintToNavPrintAction(productId)
+        val action = PrintSelectorFragmentDirections.actionNavPrintToNavPrintAction(productKey, barcodeData)
         view?.findNavController()?.navigate(action)
     }
 }

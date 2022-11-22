@@ -41,8 +41,12 @@
         android:label="@string/menu_print"
         tools:layout="@layout/fragment_print_action">
         <argument
-            android:name="productId"
+            android:name="productKey"
             app:argType="string" />
+        <argument
+            android:name="barcode"
+            app:argType="string"
+            app:nullable="true" />
     </fragment>
 
     <fragment
@@ -51,8 +55,12 @@
         android:label="@string/menu_stock"
         tools:layout="@layout/fragment_stock_action">
         <argument
-            android:name="productId"
+            android:name="productKey"
             app:argType="string" />
+        <argument
+            android:name="barcode"
+            app:argType="string"
+            app:nullable="true" />
     </fragment>
 
     <fragment
@@ -61,8 +69,12 @@
         android:label="@string/menu_prices"
         tools:layout="@layout/fragment_prices_action">
         <argument
-            android:name="productId"
+            android:name="productKey"
             app:argType="string" />
+        <argument
+            android:name="barcode"
+            app:argType="string"
+            app:nullable="true" />
     </fragment>
     <fragment
         android:id="@+id/nav_settings"
@@ -80,10 +92,10 @@
         android:id="@+id/nav_settings_products"
         android:name="ml.komarov.itemscan.fragments.settings.SettingsProductsFragment"
         android:label="@string/products_data"
-        tools:layout="@layout/fragment_settings_products"/>
+        tools:layout="@layout/fragment_settings_products" />
     <fragment
         android:id="@+id/nav_settings_printer"
         android:name="ml.komarov.itemscan.fragments.settings.SettingsPrinterFragment"
         android:label="@string/printer"
-        tools:layout="@layout/fragment_settings_printer"/>
+        tools:layout="@layout/fragment_settings_printer" />
 </navigation>

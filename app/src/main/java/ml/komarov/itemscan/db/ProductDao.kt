@@ -10,6 +10,9 @@ interface ProductDao {
     @Query("SELECT COUNT(*) FROM product")
     fun count(): Int
 
+    @Query("SELECT * FROM product WHERE ref_key = :productKey LIMIT 1")
+    fun findByKey(productKey: String): Product
+
     @Query("SELECT * FROM product WHERE ref_key IN (:productKeys)")
     fun loadAllByKeys(productKeys: Array<String>): List<Product>
 

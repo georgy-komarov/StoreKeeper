@@ -4,20 +4,24 @@ import android.app.Activity.RESULT_OK
 import android.content.Intent
 import android.os.Bundle
 import android.view.*
+import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.core.view.MenuHost
 import androidx.core.view.MenuProvider
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Lifecycle
 import androidx.navigation.findNavController
+import ml.komarov.itemscan.App
 import ml.komarov.itemscan.BarcodeActivity
 import ml.komarov.itemscan.R
 import ml.komarov.itemscan.databinding.FragmentMainBinding
+import ml.komarov.itemscan.db.AppDatabase
 
 
 abstract class BaseSelectorFragment : Fragment(), MenuProvider {
 
-    lateinit var productId: String
+    protected var barcodeData: String? = null
+    protected lateinit var productKey: String
 
     private var _binding: FragmentMainBinding? = null
 
@@ -78,8 +82,17 @@ abstract class BaseSelectorFragment : Fragment(), MenuProvider {
     }
 
     private fun openCodeData(code: String) {
-        productId = code
-        navigateToAction()
+        barcodeData = code
+
+        val db: AppDatabase = App.instance!!.database
+        val barcodes = db.barcodeDao().findByBarcode(code)
+
+        if (barcodes.isEmpty()) {
+            Toast.makeText(context, R.string.barcode_not_found, Toast.LENGTH_SHORT).show()
+        } else {
+            productKey = barcodes[0].productKey
+            navigateToAction()
+        }
     }
 
     abstract fun navigateToAction()

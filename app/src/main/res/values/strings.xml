@@ -10,7 +10,8 @@
     <string name="product_size">Размер товара</string>
     <string name="confirm">Подтвердить</string>
     <string name="scan">Сканировать</string>
-    <string name="item_data_hint">Штрихкод / артикул / наименование</string>
+<!--    <string name="item_data_hint">Штрихкод / артикул / наименование</string>-->
+    <string name="item_data_hint">Штрихкод</string>
     <string name="barcode">Штрихкод</string>
     <string name="or">или</string>
     <string name="menu_print">Печать ценников</string>
@@ -30,6 +31,7 @@
     <string name="products_count">Загружено товаров</string>
     <string name="barcodes_count">Загружено штрихкодов</string>
     <string name="failed_to_get_response">Не удалось получить ответ!</string>
+    <string name="barcode_not_found">Штрихкод не найден!</string>
     <string name="size">Размер</string>
     <string name="price">Цена</string>
     <string name="amount">Количество</string>

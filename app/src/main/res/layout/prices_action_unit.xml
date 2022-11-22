@@ -1,79 +1,74 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="33dp">
 
-
-    <CheckBox android:id="@+id/prices_checkbox"
+    <CheckBox
+        android:id="@+id/prices_checkbox"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textColor="?attr/colorSecondary"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:textColor="#39A1BA"
         app:layout_constraintLeft_toRightOf="@id/prices_size"
-        />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/prices_size"
         android:layout_width="0dp"
         android:layout_height="19dp"
-        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:gravity="center_horizontal|top"
-        android:text="@string/size"
-        app:layout_constraintTop_toTopOf="parent"
         android:layout_marginTop="7dp"
         android:layout_marginBottom="7dp"
+        android:gravity="center_horizontal|top"
+        android:text="@string/size"
         app:layout_constraintLeft_toRightOf="@id/prices_checkbox"
         app:layout_constraintRight_toLeftOf="@id/prices_amount"
-        />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/prices_amount"
         android:layout_width="0dp"
         android:layout_height="19dp"
-        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:gravity="center_horizontal|top"
-        android:text="@string/amount"
-        app:layout_constraintTop_toTopOf="parent"
         android:layout_marginTop="7dp"
         android:layout_marginBottom="7dp"
+        android:gravity="center_horizontal|top"
+        android:text="@string/amount"
+        app:layout_constraintLeft_toRightOf="@id/prices_size"
         app:layout_constraintRight_toLeftOf="@id/prices_price"
-        app:layout_constraintLeft_toRightOf="@id/prices_size"/>
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/prices_price"
         android:layout_width="0dp"
         android:layout_height="19dp"
-        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:gravity="center_horizontal|top"
-        android:text="@string/price"
-        app:layout_constraintTop_toTopOf="parent"
         android:layout_marginTop="7dp"
         android:layout_marginBottom="7dp"
+        android:gravity="center_horizontal|top"
+        android:text="@string/price"
+        app:layout_constraintLeft_toRightOf="@id/prices_amount"
         app:layout_constraintRight_toLeftOf="@id/prices_newprice"
-        app:layout_constraintLeft_toRightOf="@id/prices_amount"/>
+        app:layout_constraintTop_toTopOf="parent" />
 
 
     <TextView
         android:id="@+id/prices_newprice"
         android:layout_width="0dp"
         android:layout_height="19dp"
-        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
+        android:layout_marginTop="7dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="7dp"
         android:gravity="center_horizontal|top"
         android:text="@string/new_price"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="7dp"
-        android:layout_marginBottom="7dp"
-        android:layout_marginRight="24dp"
         app:layout_constraintLeft_toRightOf="@id/prices_price"
-        app:layout_constraintRight_toRightOf="parent"/>
-
-
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

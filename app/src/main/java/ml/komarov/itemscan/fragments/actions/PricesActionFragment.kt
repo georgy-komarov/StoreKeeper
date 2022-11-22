@@ -2,12 +2,17 @@ package ml.komarov.itemscan.fragments.actions
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import androidx.viewbinding.ViewBinding
 import ml.komarov.itemscan.R
 import ml.komarov.itemscan.databinding.FragmentPricesActionBinding
 
+
 class PricesActionFragment : BaseResultFragment() {
     private lateinit var binding: FragmentPricesActionBinding
+    private lateinit var recyclerView: RecyclerView
+    private lateinit var adapter: PricesActionAdapter
 
     override fun onCreateViewBinding(
         inflater: LayoutInflater,
@@ -18,8 +23,28 @@ class PricesActionFragment : BaseResultFragment() {
     }
 
     override fun setup() {
+        recyclerView = binding.pricesRecycler
+        val manager = LinearLayoutManager(context)
+        recyclerView.layoutManager = manager
+        recyclerView.setHasFixedSize(true)
+        adapter = PricesActionAdapter()
+        recyclerView.adapter = adapter
+        adapter.setList(testData())
+
         super.setup()
-        binding.textPrices.text = "prices_table"
+    }
+
+    private fun testData(): ArrayList<PricesActionUnit>{
+        val finalList = ArrayList<PricesActionUnit>()
+        finalList.add(PricesActionUnit("42", 10, 1, "-"))
+        finalList.add(PricesActionUnit("52", 20, 2, "-"))
+        finalList.add(PricesActionUnit("32", 30, 3, "-"))
+        finalList.add(PricesActionUnit("52", 20, 2, "-"))
+        finalList.add(PricesActionUnit("52", 20, 2, "-"))
+        finalList.add(PricesActionUnit("52", 20, 2, "-"))
+        finalList.add(PricesActionUnit("52", 20, 2, "-"))
+
+        return finalList
     }
 
     override val menuCloseDestination = R.id.nav_prices

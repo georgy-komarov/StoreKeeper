@@ -12,7 +12,7 @@ import ml.komarov.itemscan.databinding.FragmentPrintActionBinding
 class PrintActionFragment : BaseResultFragment() {
     private lateinit var binding: FragmentPrintActionBinding
     private lateinit var recyclerView: RecyclerView
-    private lateinit var adapter: printActionAdapter
+    private lateinit var adapter: PrintActionAdapter
 
     override fun onCreateViewBinding(
         inflater: LayoutInflater,
@@ -27,7 +27,7 @@ class PrintActionFragment : BaseResultFragment() {
         val manager = LinearLayoutManager(context)
         recyclerView.layoutManager = manager
         recyclerView.setHasFixedSize(true)
-        adapter = printActionAdapter()
+        adapter = PrintActionAdapter()
         recyclerView.adapter = adapter
         adapter.setList(testData())
 
@@ -36,13 +36,11 @@ class PrintActionFragment : BaseResultFragment() {
 
     private fun testData(): ArrayList<PrintActionUnit>{
         val finalList = ArrayList<PrintActionUnit>()
-        finalList.add(PrintActionUnit("42", 10, 1, 0))
-        finalList.add(PrintActionUnit("52", 20, 2, 0))
-        finalList.add(PrintActionUnit("32", 30, 3, 0))
-        finalList.add(PrintActionUnit("52", 20, 2, 0))
-        finalList.add(PrintActionUnit("52", 20, 2, 0))
-        finalList.add(PrintActionUnit("52", 20, 2, 0))
-        finalList.add(PrintActionUnit("52", 20, 2, 0))
+        finalList.add(PrintActionUnit(false, "42", 10, 1, "0"))
+        finalList.add(PrintActionUnit(false, "52", 20, 5, "0"))
+        finalList.add(PrintActionUnit(false, "32", 30, 7, "0"))
+        finalList.add(PrintActionUnit(false, "42", 10, 1, "0"))
+
 
         return finalList
     }

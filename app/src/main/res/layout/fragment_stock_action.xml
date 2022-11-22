@@ -73,7 +73,7 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/stock_recycler"
         android:layout_width="match_parent"
-        android:layout_height="150dp"
+        android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@id/stock_separator_bottom"
         tools:listitem="@layout/stock_action_unit" />
 

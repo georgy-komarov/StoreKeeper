@@ -98,7 +98,7 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/prices_recycler"
         android:layout_width="match_parent"
-        android:layout_height="150dp"
+        android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@id/prices_separator_bottom"
         tools:listitem="@layout/prices_action_unit"
         />

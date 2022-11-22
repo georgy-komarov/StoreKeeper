@@ -13,7 +13,6 @@ import androidx.core.view.MenuProvider
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Lifecycle
 import androidx.navigation.Navigation.findNavController
-import androidx.recyclerview.widget.RecyclerView
 import androidx.viewbinding.ViewBinding
 import ml.komarov.itemscan.App
 import ml.komarov.itemscan.R
@@ -143,10 +142,11 @@ abstract class BaseResultFragment : Fragment(), MenuProvider {
                         characteristicKey,
                         db.characteristicDao().findByKey(characteristicKey).name,
                         productDataJSON.getInt("price"),
-                        productDataJSON.getInt("amount"),
+                        if (productDataJSON.isNull("amount")) 0 else productDataJSON.getInt("amount"),
                     )
                     productDataList.add(productData)
                 }
+                productDataList.sortBy { it.size }
 
                 requireActivity().runOnUiThread {
                     waitDialog.hide()

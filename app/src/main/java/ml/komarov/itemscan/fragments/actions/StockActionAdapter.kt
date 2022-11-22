@@ -1,19 +1,17 @@
 package ml.komarov.itemscan.fragments.actions
 
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import ml.komarov.itemscan.R
 import ml.komarov.itemscan.databinding.StockActionUnitBinding
 
 class StockActionAdapter : RecyclerView.Adapter<StockActionAdapter.StockActionViewHolder>() {
 
-    private var UnitList = emptyList<StockActionUnit>()
+    private var unitList = emptyList<StockActionUnit>()
 
     class StockActionViewHolder(
         val binding: StockActionUnitBinding
-        ): RecyclerView.ViewHolder(binding.root) {
+    ) : RecyclerView.ViewHolder(binding.root) {
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): StockActionViewHolder {
@@ -23,17 +21,17 @@ class StockActionAdapter : RecyclerView.Adapter<StockActionAdapter.StockActionVi
     }
 
     override fun onBindViewHolder(holder: StockActionViewHolder, position: Int) {
-        holder.binding.stockPrice.text = UnitList[position].price.toString()
-        holder.binding.stockAmount.text = UnitList[position].amount.toString()
-        holder.binding.stockSize.text = UnitList[position].size
+        holder.binding.stockPrice.text = unitList[position].price.toString()
+        holder.binding.stockAmount.text = unitList[position].amount.toString()
+        holder.binding.stockSize.text = unitList[position].size
     }
 
     override fun getItemCount(): Int {
-        return UnitList.size
+        return unitList.size
     }
 
-    fun setList(list: List<StockActionUnit>){
-        UnitList = list
+    fun setList(list: List<StockActionUnit>) {
+        unitList = list
         notifyDataSetChanged()
     }
 

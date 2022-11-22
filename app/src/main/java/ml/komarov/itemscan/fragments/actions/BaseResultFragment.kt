@@ -142,8 +142,8 @@ abstract class BaseResultFragment : Fragment(), MenuProvider {
                     val productData = BaseActionUnit(
                         characteristicKey,
                         db.characteristicDao().findByKey(characteristicKey).name,
-                        productDataJSON.getInt("amount"),
                         productDataJSON.getInt("price"),
+                        productDataJSON.getInt("amount"),
                     )
                     productDataList.add(productData)
                 }

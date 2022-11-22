@@ -29,4 +29,6 @@
     <string name="price">Цена</string>
     <string name="amount">Количество</string>
     <string name="new_price">Новая</string>
+    <string name="multiplier">Печатать</string>
+    <string name="amount_hint">Количество</string>
 </resources>

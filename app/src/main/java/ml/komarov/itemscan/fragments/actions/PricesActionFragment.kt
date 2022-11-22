@@ -23,26 +23,34 @@ class PricesActionFragment : BaseResultFragment() {
     }
 
     override fun setup() {
-        recyclerView = binding.pricesRecycler
+        super.setup()
+
         val manager = LinearLayoutManager(context)
+        recyclerView = binding.pricesRecycler
         recyclerView.layoutManager = manager
         recyclerView.setHasFixedSize(true)
+
         adapter = PricesActionAdapter()
         recyclerView.adapter = adapter
-        adapter.setList(testData())
 
-        super.setup()
+        adapter.setList(getProductDataAdapterList())
     }
 
-    private fun testData(): ArrayList<PricesActionUnit>{
-        val finalList = ArrayList<PricesActionUnit>()
-        finalList.add(PricesActionUnit(false, "42", 10, 1, "-"))
-        finalList.add(PricesActionUnit(false, "52", 20, 1, "-"))
-        finalList.add(PricesActionUnit(false, "32", 10, 1, "-"))
-        finalList.add(PricesActionUnit(false, "42", 10, 1, "-"))
-
-
-        return finalList
+    private fun getProductDataAdapterList(): ArrayList<PricesActionUnit> {
+        val adapterList = ArrayList<PricesActionUnit>()
+        for (productData in productDataList) {
+            adapterList.add(
+                PricesActionUnit(
+                    false,
+                    productData.sizeKey,
+                    productData.size,
+                    productData.price,
+                    productData.amount,
+                    "-"
+                )
+            )
+        }
+        return adapterList
     }
 
     override val menuCloseDestination = R.id.nav_prices

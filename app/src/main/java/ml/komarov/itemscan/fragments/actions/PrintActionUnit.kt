@@ -1,10 +1,10 @@
 package ml.komarov.itemscan.fragments.actions
 
 class PrintActionUnit(
-    var checked : Boolean = false,
-    var size : String,
-    var price : Int,
-    var amount : Int,
-    var multiplier : String
+    var checked: Boolean = false,
+    var sizeKey: String,
+    var size: String,
+    var price: Int,
+    var amount: Int,
+    var multiplier: String
 )
-

@@ -34,7 +34,7 @@
     <string name="barcode_not_found">Штрихкод не найден!</string>
     <string name="size">Размер</string>
     <string name="price">Цена</string>
-    <string name="amount">Количество</string>
+    <string name="amount">Кол-во</string>
     <string name="new_price">Новая</string>
     <string name="multiplier">Печатать</string>
     <string name="amount_hint">Количество</string>
@@ -42,4 +42,6 @@
     <string name="new_price_annotation">*Новая цена будет добавлена ко всем выбранным размерам</string>
     <string name="save_button">Сохранить</string>
     <string name="print_button">Печать</string>
+    <string name="please_wait">Пожалуйста, подождите.</string>
+    <string name="receiving_data">Получаем данные…</string>
 </resources>

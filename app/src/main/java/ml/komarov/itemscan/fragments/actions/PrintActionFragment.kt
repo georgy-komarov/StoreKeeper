@@ -23,26 +23,34 @@ class PrintActionFragment : BaseResultFragment() {
     }
 
     override fun setup() {
-        recyclerView = binding.printRecycler
+        super.setup()
+
         val manager = LinearLayoutManager(context)
+        recyclerView = binding.printRecycler
         recyclerView.layoutManager = manager
         recyclerView.setHasFixedSize(true)
+
         adapter = PrintActionAdapter()
         recyclerView.adapter = adapter
-        adapter.setList(testData())
 
-        super.setup()
+        adapter.setList(getProductDataAdapterList())
     }
 
-    private fun testData(): ArrayList<PrintActionUnit>{
-        val finalList = ArrayList<PrintActionUnit>()
-        finalList.add(PrintActionUnit(false, "42", 10, 1, "0"))
-        finalList.add(PrintActionUnit(false, "52", 20, 5, "0"))
-        finalList.add(PrintActionUnit(false, "32", 30, 7, "0"))
-        finalList.add(PrintActionUnit(false, "42", 10, 1, "0"))
-
-
-        return finalList
+    private fun getProductDataAdapterList(): ArrayList<PrintActionUnit> {
+        val adapterList = ArrayList<PrintActionUnit>()
+        for (productData in productDataList) {
+            adapterList.add(
+                PrintActionUnit(
+                    false,
+                    productData.sizeKey,
+                    productData.size,
+                    productData.price,
+                    productData.amount,
+                    "0"
+                )
+            )
+        }
+        return adapterList
     }
 
     override val menuCloseDestination = R.id.nav_print

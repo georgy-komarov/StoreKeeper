@@ -23,31 +23,32 @@ class StockActionFragment : BaseResultFragment() {
     }
 
     override fun setup() {
-        recyclerView = binding.stockRecycler
-        val manager = LinearLayoutManager(context)
-        recyclerView.layoutManager = manager
-        recyclerView.setHasFixedSize(true)
-        adapter = StockActionAdapter()
-        recyclerView.adapter = adapter
-        adapter.setList(testData())
-
         super.setup()
 
+        val manager = LinearLayoutManager(context)
+        recyclerView = binding.stockRecycler
+        recyclerView.layoutManager = manager
+        recyclerView.setHasFixedSize(true)
+
+        adapter = StockActionAdapter()
+        recyclerView.adapter = adapter
+
+        adapter.setList(getProductDataAdapterList())
     }
 
-    private fun testData(): ArrayList<StockActionUnit>{
-        val finalList = ArrayList<StockActionUnit>()
-        finalList.add(StockActionUnit("42", 10, 1))
-        finalList.add(StockActionUnit("54", 20, 2))
-        finalList.add(StockActionUnit("21", 42, 5))
-        finalList.add(StockActionUnit("21", 42, 5))
-        finalList.add(StockActionUnit("21", 42, 2))
-        finalList.add(StockActionUnit("21", 42, 5))
-        finalList.add(StockActionUnit("21", 42, 5))
-        finalList.add(StockActionUnit("21", 42, 5))
-        finalList.add(StockActionUnit("21", 42, 5))
-        finalList.add(StockActionUnit("21", 42, 5))
-        return finalList
+    private fun getProductDataAdapterList(): ArrayList<StockActionUnit> {
+        val adapterList = ArrayList<StockActionUnit>()
+        for (productData in productDataList) {
+            adapterList.add(
+                StockActionUnit(
+                    productData.sizeKey,
+                    productData.size,
+                    productData.price,
+                    productData.amount,
+                )
+            )
+        }
+        return adapterList
     }
 
     override val menuCloseDestination = R.id.nav_stock

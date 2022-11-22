@@ -1,10 +1,8 @@
 package ml.komarov.itemscan.fragments.actions
 
-class PricesActionUnit(
-    var checked: Boolean = false,
+class BaseActionUnit(
     var sizeKey: String,
     var size: String,
     var price: Int,
-    var amount: Int,
-    var newPrice: String = "-"
+    var amount: Int
 )

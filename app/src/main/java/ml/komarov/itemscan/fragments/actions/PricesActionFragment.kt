@@ -36,13 +36,11 @@ class PricesActionFragment : BaseResultFragment() {
 
     private fun testData(): ArrayList<PricesActionUnit>{
         val finalList = ArrayList<PricesActionUnit>()
-        finalList.add(PricesActionUnit("42", 10, 1, "-"))
-        finalList.add(PricesActionUnit("52", 20, 2, "-"))
-        finalList.add(PricesActionUnit("32", 30, 3, "-"))
-        finalList.add(PricesActionUnit("52", 20, 2, "-"))
-        finalList.add(PricesActionUnit("52", 20, 2, "-"))
-        finalList.add(PricesActionUnit("52", 20, 2, "-"))
-        finalList.add(PricesActionUnit("52", 20, 2, "-"))
+        finalList.add(PricesActionUnit(false, "42", 10, 1, "-"))
+        finalList.add(PricesActionUnit(false, "52", 20, 1, "-"))
+        finalList.add(PricesActionUnit(false, "32", 10, 1, "-"))
+        finalList.add(PricesActionUnit(false, "42", 10, 1, "-"))
+
 
         return finalList
     }

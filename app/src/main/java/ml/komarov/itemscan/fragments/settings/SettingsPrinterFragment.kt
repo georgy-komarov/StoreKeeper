@@ -93,7 +93,7 @@ class SettingsPrinterFragment : Fragment() {
                         requireActivity().runOnUiThread {
                             Toast.makeText(
                                 requireContext(),
-                                "${R.string.failed_to_get_response} - код ${response.code}",
+                                "${getString(R.string.failed_to_get_response)} (${response.code})",
                                 Toast.LENGTH_LONG
                             ).show()
                         }

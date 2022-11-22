@@ -29,4 +29,5 @@
     <string name="sizes_count">Загружено характеристик</string>
     <string name="products_count">Загружено товаров</string>
     <string name="barcodes_count">Загружено штрихкодов</string>
+    <string name="failed_to_get_response">Не удалось получить ответ!</string>
 </resources>

@@ -3,6 +3,7 @@
     package="ml.komarov.itemscan">
 
     <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:name="ml.komarov.itemscan.App"
@@ -11,7 +12,8 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.MainTheme">
+        android:theme="@style/Theme.MainTheme"
+        android:usesCleartextTraffic="true">
         <activity
             android:name="ml.komarov.itemscan.BarcodeActivity"
             android:screenOrientation="portrait" />

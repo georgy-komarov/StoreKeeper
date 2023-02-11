@@ -16,7 +16,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            tools:context="ml.komarov.itemscan.MainActivity">
+            tools:context="ml.komarov.storekeeper.MainActivity">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -38,7 +38,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            tools:context="ml.komarov.itemscan.MainActivity">
+            tools:context="ml.komarov.storekeeper.MainActivity">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -60,7 +60,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            tools:context="ml.komarov.itemscan.MainActivity">
+            tools:context="ml.komarov.storekeeper.MainActivity">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -82,7 +82,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            tools:context="ml.komarov.itemscan.MainActivity">
+            tools:context="ml.komarov.storekeeper.MainActivity">
 
             <TextView
                 android:layout_width="wrap_content"

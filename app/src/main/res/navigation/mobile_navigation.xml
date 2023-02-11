@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/nav_print"
-        android:name="ml.komarov.itemscan.fragments.selectors.PrintSelectorFragment"
+        android:name="ml.komarov.storekeeper.fragments.selectors.PrintSelectorFragment"
         android:label="@string/menu_print"
         tools:layout="@layout/fragment_main">
         <action
@@ -17,7 +17,7 @@
 
     <fragment
         android:id="@+id/nav_stock"
-        android:name="ml.komarov.itemscan.fragments.selectors.StockSelectorFragment"
+        android:name="ml.komarov.storekeeper.fragments.selectors.StockSelectorFragment"
         android:label="@string/menu_stock"
         tools:layout="@layout/fragment_main">
         <action
@@ -27,7 +27,7 @@
 
     <fragment
         android:id="@+id/nav_prices"
-        android:name="ml.komarov.itemscan.fragments.selectors.PricesSelectorFragment"
+        android:name="ml.komarov.storekeeper.fragments.selectors.PricesSelectorFragment"
         android:label="@string/menu_prices"
         tools:layout="@layout/fragment_main">
         <action
@@ -37,7 +37,7 @@
 
     <fragment
         android:id="@+id/nav_print_action"
-        android:name="ml.komarov.itemscan.fragments.actions.PrintActionFragment"
+        android:name="ml.komarov.storekeeper.fragments.actions.PrintActionFragment"
         android:label="@string/menu_print"
         tools:layout="@layout/fragment_print_action">
         <argument
@@ -51,7 +51,7 @@
 
     <fragment
         android:id="@+id/nav_stock_action"
-        android:name="ml.komarov.itemscan.fragments.actions.StockActionFragment"
+        android:name="ml.komarov.storekeeper.fragments.actions.StockActionFragment"
         android:label="@string/menu_stock"
         tools:layout="@layout/fragment_stock_action">
         <argument
@@ -65,7 +65,7 @@
 
     <fragment
         android:id="@+id/nav_prices_action"
-        android:name="ml.komarov.itemscan.fragments.actions.PricesActionFragment"
+        android:name="ml.komarov.storekeeper.fragments.actions.PricesActionFragment"
         android:label="@string/menu_prices"
         tools:layout="@layout/fragment_prices_action">
         <argument
@@ -78,7 +78,7 @@
     </fragment>
     <fragment
         android:id="@+id/nav_settings"
-        android:name="ml.komarov.itemscan.fragments.settings.SettingsFragment"
+        android:name="ml.komarov.storekeeper.fragments.settings.SettingsFragment"
         android:label="@string/settings"
         tools:layout="@layout/fragment_settings">
         <action
@@ -90,12 +90,12 @@
     </fragment>
     <fragment
         android:id="@+id/nav_settings_products"
-        android:name="ml.komarov.itemscan.fragments.settings.SettingsProductsFragment"
+        android:name="ml.komarov.storekeeper.fragments.settings.SettingsProductsFragment"
         android:label="@string/products_data"
         tools:layout="@layout/fragment_settings_products" />
     <fragment
         android:id="@+id/nav_settings_printer"
-        android:name="ml.komarov.itemscan.fragments.settings.SettingsPrinterFragment"
+        android:name="ml.komarov.storekeeper.fragments.settings.SettingsPrinterFragment"
         android:label="@string/printer"
         tools:layout="@layout/fragment_settings_printer" />
 </navigation>

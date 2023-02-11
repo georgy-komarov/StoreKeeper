@@ -5,7 +5,7 @@
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
-        android:name="ml.komarov.itemscan.App"
+        android:name="ml.komarov.storekeeper.App"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -14,10 +14,10 @@
         android:theme="@style/Theme.MainTheme"
         android:usesCleartextTraffic="true">
         <activity
-            android:name="ml.komarov.itemscan.BarcodeActivity"
+            android:name="ml.komarov.storekeeper.BarcodeActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name="ml.komarov.itemscan.MainActivity"
+            android:name="ml.komarov.storekeeper.MainActivity"
             android:exported="true"
             android:screenOrientation="portrait">
             <intent-filter>

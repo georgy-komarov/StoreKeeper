@@ -11,7 +11,7 @@ android {
     buildToolsVersion "33.0.0"
 
     defaultConfig {
-        applicationId "ml.komarov.itemscan"
+        applicationId "ml.komarov.storekeeper"
         minSdk 26
         targetSdk 33
         versionCode 1
@@ -43,7 +43,7 @@ android {
         aidl = false
         renderScript = false
     }
-    namespace 'ml.komarov.itemscan'
+    namespace 'ml.komarov.storekeeper'
 }
 
 dependencies {

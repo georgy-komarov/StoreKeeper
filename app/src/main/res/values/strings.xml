@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">ItemScan</string>
+    <string name="app_name">StoreKeeper</string>
     <string name="app_settings">APP_SETTINGS</string>
     <string name="colon">\:\u0020</string>
     <string name="settings">Настройки</string>

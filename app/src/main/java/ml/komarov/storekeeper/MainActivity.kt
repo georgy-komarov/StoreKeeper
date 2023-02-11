@@ -40,10 +40,14 @@ class MainActivity : AppCompatActivity() {
         val drawerLayout: DrawerLayout = binding.drawerLayout
         val navView: NavigationView = binding.navView
 
-        // Save nav choice
+        // Saved nav choice
         val navSavedChoice =
             sharedPreferences.getInt("navigationChoice", navView.menu.getItem(0).itemId)
-        openNavigationItemSelected(navSavedChoice)
+
+        // Set up navigation graph manually
+        val graph = navController.navInflater.inflate(R.navigation.mobile_navigation)
+        graph.setStartDestination(navSavedChoice)
+        navController.graph = graph
 
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.

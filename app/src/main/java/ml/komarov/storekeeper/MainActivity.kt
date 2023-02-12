@@ -42,10 +42,7 @@ class MainActivity : AppCompatActivity() {
 
         // Saved nav choice
         val defaultMenuItem = navView.menu.getItem(0).itemId
-        val defaultMenuItemName = resources.getResourceName(defaultMenuItem)
-        val defaultMenuItemTypeName = resources.getResourceTypeName(defaultMenuItem)
-        val defaultMenuItemPackageName = resources.getResourcePackageName(defaultMenuItem)
-        val defaultMenuItemFullName = "${defaultMenuItemName}|${defaultMenuItemTypeName}|${defaultMenuItemPackageName}"
+        val defaultMenuItemFullName = getResourceFullName(defaultMenuItem)
         val navSavedChoice = sharedPreferences.getString("navigationChoice", defaultMenuItemFullName)!!
         val (savedMenuItemName, savedMenuItemTypeName, savedMenuItemPackageName) = navSavedChoice.split("|")
 
@@ -82,7 +79,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun onNavigationItemSelected(item: MenuItem): Boolean {
-        sharedPreferences.edit().putString("navigationChoice", resources.getResourceName(item.itemId)).apply()
+        sharedPreferences.edit().putString("navigationChoice", getResourceFullName(item.itemId)).apply()
 
         val handled = NavigationUI.onNavDestinationSelected(item, navController)
         if (handled) {
@@ -106,5 +103,12 @@ class MainActivity : AppCompatActivity() {
                 onNavigationItemSelected(item)
             }
         }
+    }
+
+    private fun getResourceFullName(resId: Int): String {
+        val defaultMenuItemName = resources.getResourceName(resId)
+        val defaultMenuItemTypeName = resources.getResourceTypeName(resId)
+        val defaultMenuItemPackageName = resources.getResourcePackageName(resId)
+        return "${defaultMenuItemName}|${defaultMenuItemTypeName}|${defaultMenuItemPackageName}"
     }
 }

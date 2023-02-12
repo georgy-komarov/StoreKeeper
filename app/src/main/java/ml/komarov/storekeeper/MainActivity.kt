@@ -41,12 +41,24 @@ class MainActivity : AppCompatActivity() {
         val navView: NavigationView = binding.navView
 
         // Saved nav choice
-        val navSavedChoice =
-            sharedPreferences.getInt("navigationChoice", navView.menu.getItem(0).itemId)
+        val defaultMenuItem = navView.menu.getItem(0).itemId
+        val defaultMenuItemName = resources.getResourceName(defaultMenuItem)
+        val defaultMenuItemTypeName = resources.getResourceTypeName(defaultMenuItem)
+        val defaultMenuItemPackageName = resources.getResourcePackageName(defaultMenuItem)
+        val defaultMenuItemFullName = "${defaultMenuItemName}|${defaultMenuItemTypeName}|${defaultMenuItemPackageName}"
+        val navSavedChoice = sharedPreferences.getString("navigationChoice", defaultMenuItemFullName)!!
+        val (savedMenuItemName, savedMenuItemTypeName, savedMenuItemPackageName) = navSavedChoice.split("|")
+
+        // Identifier may be changed in layout code
+        val savedMenuItem = try {
+            resources.getIdentifier(savedMenuItemName, savedMenuItemTypeName, savedMenuItemPackageName)
+        } catch (e: Exception) {
+            defaultMenuItem
+        }
 
         // Set up navigation graph manually
         val graph = navController.navInflater.inflate(R.navigation.mobile_navigation)
-        graph.setStartDestination(navSavedChoice)
+        graph.setStartDestination(savedMenuItem)
         navController.graph = graph
 
         // Passing each menu ID as a set of Ids because each
@@ -70,7 +82,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun onNavigationItemSelected(item: MenuItem): Boolean {
-        sharedPreferences.edit().putInt("navigationChoice", item.itemId).apply()
+        sharedPreferences.edit().putString("navigationChoice", resources.getResourceName(item.itemId)).apply()
 
         val handled = NavigationUI.onNavDestinationSelected(item, navController)
         if (handled) {
